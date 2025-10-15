@@ -3,8 +3,8 @@ import "./globals.css";
 import { AppProvider } from "@/components/orderlyProvider/appProvider";
 
 export const metadata: Metadata = {
-  title: "Orderly SDK Demo",
-  description: "Orderly SDK Demo",
+  title: "Clober Perp",
+  description: "Fully On-chain Order Book",
 };
 
 export default function RootLayout({

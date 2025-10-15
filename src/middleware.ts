@@ -6,7 +6,7 @@ import { PathEnum } from "@/constant";
 
 const localePaths = Object.values(PathEnum);
 
-export const i18nCookieKey = "orderly_i18nLng";
+export const i18nCookieKey = "clober_i18nLng";
 
 enum LocaleEnum {
   /** English */

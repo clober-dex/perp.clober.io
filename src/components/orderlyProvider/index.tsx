@@ -18,17 +18,11 @@ import {
   getLocalePathFromPathname,
   i18n,
   LocaleCode,
-  LocaleEnum,
   LocaleProvider,
 } from "@orderly.network/i18n";
 import { usePathWithoutLang } from "@/hooks/usePathWithoutLang";
 import { usePathname } from "next/navigation";
 import { useNav } from "@/hooks/useNav";
-
-const getPrivyId = () => {
-  // dev privy id
-  return "cm86zfufk01n2ojo83s2becsr";
-};
 
 const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
   const config = useOrderlyConfig();
@@ -38,6 +32,7 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
 
   const [networkId, setNetworkId] = useLocalStorage(
     "dmm-local-storage-network-id",
+    // TODO: Change to mainnet when launching
     "mainnet"
   );
 
@@ -52,11 +47,11 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
   };
 
   const loadPath = (lang: LocaleCode) => {
-    if (lang === LocaleEnum.en) {
-      // because en is built-in, we need to load the en extend only
-      return `/locales/extend/${lang}.json`;
-    }
-    return [`/locales/${lang}.json`, `/locales/extend/${lang}.json`];
+    // if (lang === LocaleEnum.en) {
+    //   // because en is built-in, we need to load the en extend only
+    //   return `/locales/extend/${lang}.json`;
+    // }
+    return [`/locales/en.json`, `/locales/extend/en.json`];
   };
 
   useEffect(() => {
@@ -73,7 +68,7 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
       backend={{ loadPath }}
     >
       <WalletConnectorPrivyProvider
-        termsOfUse={"https://learn.woo.org/legal/terms-of-use"}
+        // termsOfUse={"https://learn.woo.org/legal/terms-of-use"}
         network={networkId}
         solanaConfig={{
           wallets: solWallets as Adapter[],
@@ -86,32 +81,22 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
           connectors: [
             wagmiConnectors.injected(),
             wagmiConnectors.walletConnect({
-              projectId: "93dba83e8d9915dc6a65ffd3ecfd19fd",
+              projectId: "14e09398dd595b0d1dccabf414ac4531",
               showQrModal: true,
               storageOptions: {},
               metadata: {
-                name: "Orderly",
-                description: "Orderly",
-                url: "https://orderly.network",
-                icons: ["/orderly-logo.svg"],
+                name: "CloberDex",
+                description: "Fully On-chain Order Book",
+                url: "https://clober.io",
+                icons: ["/clober-logo.svg"],
               },
             }),
           ],
         }}
-        privyConfig={{
-          appid: getPrivyId(),
-          config: {
-            loginMethods: ["email", "google", "twitter"],
-            appearance: {
-              theme: "dark",
-              accentColor: "#181C23",
-              logo: "/orderly-logo.svg",
-            },
-          },
-        }}
         enableSwapDeposit
       >
         <OrderlyAppProvider
+          // TODO: change it
           brokerId="demo"
           brokerName="Orderly"
           networkId={networkId}

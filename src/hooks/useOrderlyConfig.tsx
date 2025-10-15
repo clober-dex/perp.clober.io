@@ -7,9 +7,8 @@ import {
 } from "@orderly.network/ui-scaffold";
 import { type RestrictedInfoOptions } from "@orderly.network/hooks";
 import { AppLogos } from "@orderly.network/react-app";
-import { OrderlyActiveIcon, OrderlyIcon } from "../components/icons/orderly";
 import { useTranslation } from "@orderly.network/i18n";
-import { PathEnum } from "../constant";
+import { PathEnum } from "@/constant";
 import {
   LeaderboardInactiveIcon,
   PortfolioInactiveIcon,
@@ -58,41 +57,10 @@ export const useOrderlyConfig = () => {
             },
           ],
           initialMenu: PathEnum.Root,
-          campaigns: {
-            name: t("tradingRewards.rewards"),
-            href: PathEnum.Rewards,
-            isSubMenuInMobile: true,
-            subMenuBackNav: {
-              name: t("common.portfolio"),
-              href: PathEnum.Portfolio,
-            },
-            children: [
-              {
-                name: t("common.tradingRewards"),
-                href: PathEnum.RewardsTrading,
-                description: t("extend.tradingRewards.description"),
-              },
-              {
-                name: t("common.affiliate"),
-                href: PathEnum.RewardsAffiliate,
-                tag: t("extend.affiliate.tag"),
-                description: t("extend.affiliate.description"),
-              },
-              {
-                name: t("extend.staking"),
-                href: "https://app.orderly.network/staking",
-                description: t("extend.staking.description"),
-                target: "_blank",
-                icon: <OrderlyIcon size={14} />,
-                activeIcon: <OrderlyActiveIcon size={14} />,
-              },
-            ],
-          },
         },
         footerProps: {
-          telegramUrl: "https://orderly.network",
-          discordUrl: "https://discord.com/invite/orderlynetwork",
-          twitterUrl: "https://twitter.com/OrderlyNetwork",
+          discordUrl: "https://discord.gg/clober-dex",
+          twitterUrl: "https://twitter.com/CloberDEX",
         },
         bottomNavProps: {
           mainMenus: [
@@ -127,11 +95,8 @@ export const useOrderlyConfig = () => {
         appIcons: {
           main: {
             component: (
-              <img src="/orderly-logo.svg" alt="logo" style={{ height: 40 }} />
+              <img src="/clober-logo.svg" alt="logo" style={{ width: 114 }} />
             ),
-          },
-          secondary: {
-            img: "/orderly-logo-secondary.svg",
           },
         },
         restrictedInfo: {
@@ -160,8 +125,8 @@ export const useOrderlyConfig = () => {
           brandColor: "rgba(255, 255, 255, 0.98)",
 
           // ref
-          refLink: "https://orderly.network",
-          refSlogan: "Orderly referral",
+          refLink: "https://clober.io",
+          refSlogan: "Clober referral",
         },
       },
     };
