@@ -1,4 +1,5 @@
 import {useMemo} from "react";
+import Link from "next/link";
 import {TradingPageProps} from "@orderly.network/trading";
 import {BottomNavProps, FooterProps, MainNavWidgetProps,} from "@orderly.network/ui-scaffold";
 import {type RestrictedInfoOptions} from "@orderly.network/hooks";
@@ -76,7 +77,9 @@ export const useOrderlyConfig = () => {
         appIcons: {
           main: {
             component: (
-              <img src="/clober-logo.svg" alt="logo" style={{ width: 114 }} />
+              <Link id="primary-logo-link" data-discover="true" href="/perp">
+                <img src="/clober-logo.svg" alt="logo" style={{ width: 114 }} />
+              </Link>
             ),
           },
         },
