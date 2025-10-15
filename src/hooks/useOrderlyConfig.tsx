@@ -1,24 +1,10 @@
-import { useMemo } from "react";
-import { TradingPageProps } from "@orderly.network/trading";
-import {
-  BottomNavProps,
-  FooterProps,
-  MainNavWidgetProps,
-} from "@orderly.network/ui-scaffold";
-import { type RestrictedInfoOptions } from "@orderly.network/hooks";
-import { AppLogos } from "@orderly.network/react-app";
-import { useTranslation } from "@orderly.network/i18n";
-import { PathEnum } from "@/constant";
-import {
-  LeaderboardInactiveIcon,
-  PortfolioInactiveIcon,
-  PortfolioActiveIcon,
-  LeaderboardActiveIcon,
-  MarketsActiveIcon,
-  MarketsInactiveIcon,
-  TradingInactiveIcon,
-  TradingActiveIcon,
-} from "@orderly.network/ui";
+import {useMemo} from "react";
+import {TradingPageProps} from "@orderly.network/trading";
+import {BottomNavProps, FooterProps, MainNavWidgetProps,} from "@orderly.network/ui-scaffold";
+import {type RestrictedInfoOptions} from "@orderly.network/hooks";
+import {AppLogos} from "@orderly.network/react-app";
+import {useTranslation} from "@orderly.network/i18n";
+import {PathEnum} from "@/constant";
 
 export type OrderlyConfig = {
   orderlyAppProvider: {
@@ -50,7 +36,12 @@ export const useOrderlyConfig = () => {
               isHomePageInMobile: true,
             },
             { name: t("common.portfolio"), href: PathEnum.Portfolio },
-            { name: t("common.markets"), href: PathEnum.Markets }
+            { name: t("common.markets"), href: PathEnum.Markets },
+            {
+              name: "Spot",
+              target: "_blank",
+              href: "https://app.clober.io",
+            },
           ],
           initialMenu: PathEnum.Root,
         },
@@ -60,24 +51,24 @@ export const useOrderlyConfig = () => {
         },
         bottomNavProps: {
           mainMenus: [
-            {
-              name: t("common.markets"),
-              href: PathEnum.Markets,
-              activeIcon: <MarketsActiveIcon />,
-              inactiveIcon: <MarketsInactiveIcon />,
-            },
-            {
-              name: t("common.trading"),
-              href: PathEnum.Root,
-              activeIcon: <TradingActiveIcon />,
-              inactiveIcon: <TradingInactiveIcon />,
-            },
-            {
-              name: t("common.portfolio"),
-              href: PathEnum.Portfolio,
-              activeIcon: <PortfolioActiveIcon />,
-              inactiveIcon: <PortfolioInactiveIcon />,
-            },
+            // {
+            //   name: t("common.markets"),
+            //   href: PathEnum.Markets,
+            //   activeIcon: <MarketsActiveIcon />,
+            //   inactiveIcon: <MarketsInactiveIcon />,
+            // },
+            // {
+            //   name: t("common.trading"),
+            //   href: PathEnum.Root,
+            //   activeIcon: <TradingActiveIcon />,
+            //   inactiveIcon: <TradingInactiveIcon />,
+            // },
+            // {
+            //   name: t("common.portfolio"),
+            //   href: PathEnum.Portfolio,
+            //   activeIcon: <PortfolioActiveIcon />,
+            //   inactiveIcon: <PortfolioInactiveIcon />,
+            // },
           ],
         },
       },
@@ -103,10 +94,11 @@ export const useOrderlyConfig = () => {
         },
         sharePnLConfig: {
           backgroundImages: [
-            "/pnl/poster_bg_1.png",
-            "/pnl/poster_bg_2.png",
-            "/pnl/poster_bg_3.png",
-            "/pnl/poster_bg_4.png",
+            // TODO: add background images
+            // "/pnl/poster_bg_1.png",
+            // "/pnl/poster_bg_2.png",
+            // "/pnl/poster_bg_3.png",
+            // "/pnl/poster_bg_4.png",
           ],
 
           color: "rgba(255, 255, 255, 0.98)",
