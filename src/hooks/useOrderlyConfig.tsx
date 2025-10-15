@@ -50,11 +50,7 @@ export const useOrderlyConfig = () => {
               isHomePageInMobile: true,
             },
             { name: t("common.portfolio"), href: PathEnum.Portfolio },
-            { name: t("common.markets"), href: PathEnum.Markets },
-            {
-              name: t("tradingLeaderboard.leaderboard"),
-              href: PathEnum.Leaderboard,
-            },
+            { name: t("common.markets"), href: PathEnum.Markets }
           ],
           initialMenu: PathEnum.Root,
         },
@@ -75,12 +71,6 @@ export const useOrderlyConfig = () => {
               href: PathEnum.Root,
               activeIcon: <TradingActiveIcon />,
               inactiveIcon: <TradingInactiveIcon />,
-            },
-            {
-              name: t("tradingLeaderboard.leaderboard"),
-              href: PathEnum.Leaderboard,
-              activeIcon: <LeaderboardActiveIcon />,
-              inactiveIcon: <LeaderboardInactiveIcon />,
             },
             {
               name: t("common.portfolio"),
