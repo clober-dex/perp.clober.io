@@ -83,12 +83,12 @@
   --oui-spacing-lg: 30rem;
   --oui-spacing-xl: 33.75rem;
 
-  /* shonts */
-  --oui-font-size-xs: 0.75rem;
-  --out-font-size-sm: 0.875rem;
-  --oui-font-size-base: 1rem;
-  --oui-font-size-lg: 1.125rem;
-    --oui-font-size-xl: 1.25rem;
+  /* font */
+  --oui-font-size-base: 0.875rem;
+
+  .oui-font-semibold {
+    font-weight: 500 !important;
+  }
 
   .oui-text-\[rgba\(0\,0\,0\,0\.88\)\] {
     color: #FFF !important;
