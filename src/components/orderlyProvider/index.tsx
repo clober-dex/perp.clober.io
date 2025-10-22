@@ -33,7 +33,7 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
   const [networkId, setNetworkId] = useLocalStorage(
     "dmm-local-storage-network-id",
     // TODO: Change to mainnet when launching
-    "mainnet"
+    "testnet"
   );
 
   const solWallets = [
@@ -96,10 +96,16 @@ const OrderlyProvider: FC<React.PropsWithChildren> = (props) => {
         enableSwapDeposit
       >
         <OrderlyAppProvider
-          // TODO: change it
-          brokerId="demo"
-          brokerName="Orderly"
+          brokerId="clober_dex"
+          brokerName="Clober Dex"
           networkId={networkId}
+          chainFilter={{
+            mainnet: [],
+            testnet: [{ id: 10143 }]
+          }}
+          defaultChain={{
+            testnet: { id: 10143 }
+          }}
           appIcons={config.orderlyAppProvider.appIcons}
           enableSwapDeposit
           onChainChanged={(
