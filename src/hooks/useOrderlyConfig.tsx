@@ -110,8 +110,8 @@ export const useOrderlyConfig = () => {
           brandColor: "rgba(255, 255, 255, 0.98)",
 
           // ref
-          refLink: "https://clober.io",
-          refSlogan: "Clober referral",
+          refLink: typeof window !== 'undefined' ? window.location.origin : undefined,
+          refSlogan: "Clober Dex",
         },
       },
     };
