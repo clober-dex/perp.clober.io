@@ -11,6 +11,7 @@ export enum PathEnum {
   Assets = "/portfolio/assets",
   History = "/portfolio/history",
   Markets = "/markets",
+  Leaderboard = "/leaderboard",
 }
 
 export const PageTitleMap = {
