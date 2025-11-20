@@ -8,7 +8,6 @@ import { i18n, parseI18nLang } from "@orderly.network/i18n";
 
 // if href not equal to the route path, we need to convert it to the route path
 const routeMap: Partial<Record<PortfolioLeftSidebarPath, PathEnum>> = {
-  [PortfolioLeftSidebarPath.FeeTier]: PathEnum.FeeTier,
   [PortfolioLeftSidebarPath.ApiKey]: PathEnum.ApiKey,
 };
 
